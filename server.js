@@ -31,7 +31,7 @@ const orderRoutes = require('./routes/orderRoutes');
 // const mercadoPagoRoutes = require('./routes/mercadoPagoRoutes');
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT ||80;
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -54,7 +54,6 @@ app.set('port', port);
 * LLAMADO A LOS SOCKETS
 */
 // ordersSocket(io);
-
 const upload = multer({
     storage: multer.memoryStorage()
 });
@@ -70,7 +69,7 @@ orderRoutes(app,upload);
 // mercadoPagoRoutes(app);
 
 
-server.listen(3000, '192.168.1.6' || 'localhost', function() {
+server.listen(port, '172.26.13.188' || 'localhost', function() {
     console.log('Aplicacion de NodeJS ' + port + ' Iniciada...')
 });
 
@@ -81,7 +80,7 @@ app.use((err, req, res, next) => {
     res.status(err.status || 500).send(err.stack);
 });
 
-app.get('/api/',  (req, res) => {
+app.get('/',  (req, res) => {
     res.send('Ruta raiz del backend');
 });
 

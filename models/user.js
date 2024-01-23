@@ -156,12 +156,13 @@ User.create = async (user, result) => {
                 name,
                 lastname,
                 phone,
+		cedula,
                 image,
                 password,
                 created_at,
                 updated_at
             )
-        VALUES(?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     db.query
@@ -172,6 +173,7 @@ User.create = async (user, result) => {
             user.name,
             user.lastname,
             user.phone,
+	    user.cedula,
             user.image,
             hash,
             new Date(),
