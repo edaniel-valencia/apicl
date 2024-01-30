@@ -143,6 +143,28 @@ module.exports = {
                         error: err
                     });
                 }
+ 
+                var transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: 'tsoftwareecuador@gmail.com',
+                        pass: 'oaqoaxtxdvuelkkh'
+                    }
+                })
+                
+                var mailOptions = {
+                    from: 'tsoftwareecuador@gmail.com',
+                    to: user.email,
+                    subject: 'Acceso a la Tienda Virtual Cyber Link',
+                    html: '<p><b>' + user.name + '</b><b> Tus credenciales para acceder al sistemas es</b><br> <b>Email: </b>' + user.email + '<br><b>Clave: </b>' + user.password + '<br><b>Telefono: </b>' + user.phone + '<br></p>'
+                };
+                transporter.sendMail(mailOptions, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log("Correo enviado" + info.response);
+                    }
+                });
                 
                 return res.status(201).json({
                     success: true,
