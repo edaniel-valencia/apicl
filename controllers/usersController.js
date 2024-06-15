@@ -148,7 +148,7 @@ module.exports = {
                     service: 'gmail',
                     auth: {
                         user: 'tsoftwareecuador@gmail.com',
-                        pass: 'oaqoaxtxdvuelkkh'
+                        pass: 'aknh dyuc cxnm qfqz'
                     }
                 })
                 
