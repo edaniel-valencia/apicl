@@ -6,6 +6,7 @@ const db = mysql.createConnection({
   password: '1004',
      database: 'tienda_virtual'
 });
+
 // const db = mysql.createConnection({
 //         host: "database-tienda-virtual.cxfnthr4dqip.us-east-1.rds.amazonaws.com",
 //           user: 'admin',
