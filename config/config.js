@@ -1,11 +1,5 @@
 const mysql = require('mysql2');
 
-// const db = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: '1004',
-//    database: 'tienda_virtual'
-// });
 
 const db = mysql.createConnection({
         host: "db-tse-udemy.cxfnthr4dqip.us-east-1.rds.amazonaws.com",
