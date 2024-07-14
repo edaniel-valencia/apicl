@@ -69,10 +69,9 @@ orderRoutes(app,upload);
 // mercadoPagoRoutes(app);
 
 
-server.listen(port, '172.26.7.159' || 'localhost', function() {
+server.listen(port, '192.168.1.8' || 'localhost', function() {
     console.log('Aplicacion de NodeJS ' + port + ' Iniciada...')
 });
-
 
 
 // ERROR HANDLER
@@ -82,7 +81,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/',  (req, res) => {
-    res.send('Ruta raiz del backend');
+    res.send('Nuestra api esta funcionando correctamente en AWS');
 });
 
 
