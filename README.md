@@ -1,8 +1,8 @@
-# 🛵 Delivery Backend — Node.js REST API
-
 <p align="center">
-  <img src="./logo.png" alt="Delivery Backend Logo" width="180"/>
+  <img src="./logo-adavam.png" alt="Delivery Backend Logo" width="180"/>
 </p>
+
+# 🛵 Delivery Backend — Node.js REST API
 
 <p align="center">
   API REST para sistema de delivery con gestión de usuarios, pedidos, productos, categorías y direcciones.<br/>
