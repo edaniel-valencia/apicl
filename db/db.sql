@@ -1,4 +1,4 @@
-USE udemy_delivery;
+USE `edaniel-delivery`;
 
 
 CREATE TABLE users(

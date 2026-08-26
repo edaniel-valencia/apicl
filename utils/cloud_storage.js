@@ -1,16 +1,15 @@
 const { Storage } = require('@google-cloud/storage');
 const { format } = require('util');
-const env = require('../config/env')
 const url = require('url');
 const { v4: uuidv4 } = require('uuid');
 const uuid = uuidv4();
 
 const storage = new Storage({
-    projectId: "cyberlink-6a747",
-    keyFilename: './serviceAccountKey.json'
+    projectId: process.env.GCS_PROJECT_ID,
+    keyFilename: process.env.GCS_KEYFILE || './serviceAccountKey.json'
 });
 
-const bucket = storage.bucket("gs://cyberlink-6a747.appspot.com/");
+const bucket = storage.bucket(process.env.GCS_BUCKET);
 
 /**
  * Subir el archivo a Firebase Storage

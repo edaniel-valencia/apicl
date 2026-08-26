@@ -1,16 +1,15 @@
 const mysql = require('mysql2');
 
-
 const db = mysql.createConnection({
-        host: "db-tse-udemy.cxfnthr4dqip.us-east-1.rds.amazonaws.com",
-          user: 'admin',
-          password: 'db-tse-udemy',
-          database: 'udemy_test'
+  host:     process.env.DB_HOST     || 'localhost',
+  user:     process.env.DB_USER     || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME     || 'edaniel-delivery'
 });
 
-db.connect(function(err) {
-    if (err) throw err;
-    console.log('DATABASE CONNECTED!');
+db.connect(function (err) {
+  if (err) throw err;
+  console.log('DATABASE CONNECTED!');
 });
 
 module.exports = db;

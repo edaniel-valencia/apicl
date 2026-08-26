@@ -1,4 +1,4 @@
 module.exports = {
-    production: false,
-    id_developer: 0
-}
+    production: process.env.PRODUCTION === 'true',
+    id_developer: parseInt(process.env.ID_DEVELOPER) || 0
+};

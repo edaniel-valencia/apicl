@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -12,7 +13,7 @@ const session = require('express-session');
 // const mercadopago = require('mercadopago');
 // mercadopago.configure({
 //     sandbox: true,
-//     access_token: 'TEST-4332423066954571-102200-779dd861dfaa9f6acb7609a1887ee3f3-191014229'
+//     access_token: process.env.MP_ACCESS_TOKEN
 // });
 
 /*
@@ -31,7 +32,7 @@ const orderRoutes = require('./routes/orderRoutes');
 // const mercadoPagoRoutes = require('./routes/mercadoPagoRoutes');
 
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -69,8 +70,8 @@ orderRoutes(app,upload);
 // mercadoPagoRoutes(app);
 
 
-server.listen(port, '172.26.7.159' || 'localhost', function() {
-    console.log('Aplicacion de NodeJS ' + port + ' Iniciada...')
+server.listen(port, function() {
+    console.log(`✅ Servidor corriendo en http://localhost:${port}`);
 });
 
 

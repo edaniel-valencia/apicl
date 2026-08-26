@@ -145,10 +145,10 @@ module.exports = {
                 }
  
                 var transporter = nodemailer.createTransport({
-                    service: 'gmail',
+                    service: process.env.MAIL_SERVICE || 'gmail',
                     auth: {
-                        user: 'tsoftwareecuador@gmail.com',
-                        pass: 'aknh dyuc cxnm qfqz'
+                        user: process.env.MAIL_USER,
+                        pass: process.env.MAIL_PASS
                     }
                 })
                 
